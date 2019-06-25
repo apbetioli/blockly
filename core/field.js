@@ -377,8 +377,10 @@ Blockly.Field.prototype.render_ = function() {
   }
 
   // Replace the text.
-  this.textElement_.textContent = this.getDisplayText_();
-  this.updateWidth();
+  if(this.textElement_) {
+    this.textElement_.textContent = this.getDisplayText_();
+    this.updateWidth();
+  }
 };
 
 /**
